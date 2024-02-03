@@ -12,7 +12,7 @@ img {
 }
 main {
   padding: 10px;
-  max-width: 960px;
+  max-width: 1480px;
   margin: 0 auto;
 }
 header {
@@ -264,4 +264,140 @@ div.post-box {
   img {
     max-width: 100%;
   }
+}
+
+/* App.css */
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 180px;
+  padding: 20px;
+  background-color: #f5f5f5; /* Light grey background color */
+  color: #333; /* Dark text color */
+  height: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar h2 {
+  color: #555; /* Dark grey text color for headings */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar button {
+  background-color: #dbdbdb; /* Dark grey button background color */
+  /* White text color for buttons */
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar button:hover {
+  background-color: #707070; /* Slightly darker grey on hover */
+}
+
+/* Add more styling as needed */
+
+/* Add this to your CSS file */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+
+  .sidebar.closed {
+    width: 0;
+  }
+
+  .toggle-btn {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .sidebar h2 {
+    font-size: 1.2rem;
+  }
+
+  .sidebar ul {
+    margin: 10px 0;
+  }
+
+  .sidebar li {
+    margin-bottom: 5px;
+  }
+
+  .sidebar button {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+/* Add this to your CSS file */
+header {
+  position: fixed;
+  top: 0;
+  left: 150px;
+  right: 0;
+  /* Adjust the color of the header */
+  /* Adjust the text color of the header */
+  padding: 15px;
+  z-index: 3; /* Ensure the header is above the sidebar */
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 20px; /* Adjust the top position as needed */
+  left: 20px; /* Adjust the left position as needed */
+  z-index: 2; /* Ensure the button is above the sidebar */
+
+  padding: 10px 15px;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 150px;
+  padding: 20px;
+
+  height: 60%;
+  position: fixed;
+  top: 0;
+  left: -200px;
+  border-radius: 35px;
+  transition: left 0.3s ease; /* Add transition for smooth animation */
+  z-index: 1;
+}
+
+.sidebar.open {
+  left: 0;
+  top: 80px;
+}
+
+.sidebar.closed {
+  left: -200px; /* Adjust the value based on the sidebar width */
+  top: 80px;
 }
