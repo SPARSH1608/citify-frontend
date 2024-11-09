@@ -69,7 +69,7 @@ const EditPost = () => {
     data.set('id', id);
     data.set('support', support);
     if (files?.[0]) data.set('file', files?.[0]);
-    const response = await fetch(`https://citify.onrender.com/postt/${id}`, {
+    const response = await fetch(`https://citify.onrender.com/post/${id}`, {
       method: 'PUT',
       body: data,
       credentials: 'include',

@@ -25,7 +25,7 @@ const Post = ({ _id, cover, author, createdAt }) => {
     data.set('id', _id);
     data.set('support', support);
     data.set('file', cover);
-    await fetch(`https://citify.onrender.com/postt/${_id}`, {
+    await fetch(`https://citify.onrender.com/post/${_id}`, {
       method: 'PUT',
       body: data,
       credentials: 'include',
