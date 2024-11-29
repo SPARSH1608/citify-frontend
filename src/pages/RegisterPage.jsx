@@ -1,12 +1,13 @@
 import { useState } from 'react';
 
 const RegisterPage = () => {
+  const url = 'https://citify.onrender.com';
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   async function register(e) {
     e.preventDefault();
 
-    const response = await fetch('https://citify.onrender.com/register', {
+    const response = await fetch(`${url}/register`, {
       method: 'POST',
       body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },

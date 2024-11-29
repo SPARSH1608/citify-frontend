@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { UserContext } from '../UserContext';
 const LoginPage = () => {
+  const url = 'https://citify.onrender.com';
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [redirect, setRedirect] = useState(false);
@@ -9,7 +10,7 @@ const LoginPage = () => {
 
   const login = async (e) => {
     e.preventDefault();
-    const response = await fetch('https://citify.onrender.com/login', {
+    const response = await fetch(`${url}/login`, {
       method: 'POST',
       body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },

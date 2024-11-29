@@ -32,6 +32,8 @@ const formats = [
 ];
 
 const CreatePost = () => {
+  const url = 'https://citify.onrender.com';
+
   const [title, setTitle] = useState('');
   const [summary, setSummary] = useState('');
   const [content, setContent] = useState('');
@@ -45,7 +47,7 @@ const CreatePost = () => {
     data.set('content', content);
     data.set('file', files[0]);
     e.preventDefault();
-    const response = await fetch('https://citify.onrender.com/post', {
+    const response = await fetch(`${url}/post`, {
       method: 'POST',
       body: data,
       credentials: 'include',

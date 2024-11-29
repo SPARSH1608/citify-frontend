@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { UserContext } from '../UserContext';
 const PostPage = () => {
+  const url = 'https://citify.onrender.com';
   const { id } = useParams();
   const [postInfo, setPostInfo] = useState(null);
   const { userInfo } = useContext(UserContext);
@@ -10,7 +11,7 @@ const PostPage = () => {
   useEffect(() => {
     const fetchPostInfo = async () => {
       try {
-        const response = await fetch(`https://citify.onrender.com/post/${id}`);
+        const response = await fetch(`${url}/post/${id}`);
         if (!response.ok) {
           throw new Error('Failed to fetch post information');
         }
@@ -61,7 +62,7 @@ const PostPage = () => {
 
       <div className="image">
         <img
-          src={`https://citify.onrender.com/${postInfo.cover}`}
+          src={`${url}/${postInfo.cover}`}
           alt={`Cover for ${postInfo.title}`}
         />
       </div>
